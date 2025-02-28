@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击绘制爱心</title>
+    <style>
+        button {
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            background-color: #FF5733;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+      .heart {
+            width: 100px;
+            height: 90px;
+            background-color: #FF3399;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 50px auto;
+            display: none;
+        }
+
+      .heart:before,
+      .heart:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: #FF3399;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+      .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+      .heart:after {
+            left: 50px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="drawButton">点击绘制爱心</button>
+    <div class="heart" id="heart"></div>
+
+    <script>
+        document.getElementById('drawButton').addEventListener('click', function () {
+            const heart = document.getElementById('heart');
+            if (heart.style.display === 'none') {
+                heart.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
