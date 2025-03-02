@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喝水提醒</title>
+    <script>
+        function checkTimeAndRemind() {
+            let now = new Date();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            
+            // 检查是否在11:00到18:00之间，并且是半小时的间隔
+            if (hour >= 11 && hour < 18 && (minute === 0 || minute === 30)) {
+                alert("喝水时间到！请喝一杯水。");
+            }
+        }
+
+        function startReminder() {
+            checkTimeAndRemind(); // 立即检查一次
+            setInterval(checkTimeAndRemind, 60000); // 每分钟检查一次
+        }
+    </script>
+</head>
+<body onload="startReminder()">
+    <h1>喝水提醒网页</h1>
+    <p>本网页将在每天上午11点到下午6点之间，每隔30分钟提醒您喝水。</p>
+</body>
+</html>
