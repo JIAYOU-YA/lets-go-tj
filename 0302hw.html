@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>喝水提醒</title>
+    <title>温暖鼓励</title>
     <script>
-        function checkTimeAndRemind() {
-            let now = new Date();
-            let hour = now.getHours();
-            let minute = now.getMinutes();
+        function showEncouragement() {
+            const messages = [
+                "你很棒！继续加油！(✿◕‿◕✿)",
+                "今天也是充满希望的一天！💖",
+                "别忘了微笑，你的笑容最美！😊",
+                "一切都会好起来的，相信自己！✨",
+                "你已经很努力了，放松一下吧！(＾▽＾)",
+                "相信自己，你能做到的！🌟",
+                "每一天都是新的开始，加油！💪( •̀ ω •́ )✧"
+            ];
             
-            // 检查是否在11:00到18:00之间，并且是半小时的间隔
-            if (hour >= 11 && hour < 18 && (minute === 0 || minute === 30)) {
-                alert("喝水时间到！请喝一杯水。");
-            }
-        }
-
-        function startReminder() {
-            checkTimeAndRemind(); // 立即检查一次
-            setInterval(checkTimeAndRemind, 60000); // 每分钟检查一次
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            alert(messages[randomIndex]);
         }
     </script>
 </head>
-<body onload="startReminder()">
-    <h1>喝水提醒网页</h1>
-    <p>本网页将在每天上午11点到下午6点之间，每隔30分钟提醒您喝水。</p>
+<body onload="showEncouragement()">
+    <h1>欢迎来到你的鼓励小站</h1>
+    <p>每次打开这个网页，你都会收到一句温暖的话语。</p>
 </body>
 </html>
+
